@@ -16,7 +16,7 @@ length s
 
 parrot :: Int -> String -> String
 parrot n s 
-  | n == 0 = ""
+  | n <= 0 = ""
   | null s = ""
   | otherwise = s ++ parrot (n - 1) s
 

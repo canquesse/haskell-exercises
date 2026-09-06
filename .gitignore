@@ -1,0 +1,12 @@
+.DS_Store
+.idea/
+*.iml
+*~
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+.venv/
+build/
+*.class
+*.hi
+*.o

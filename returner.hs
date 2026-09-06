@@ -4,6 +4,7 @@
 -- [3,6,4]
 
 returner1 :: Int -> [a] -> [a]
+returner1 n _ | n <= 0 = []
 returner1 n list = helper 1 list where
   helper _ [] = []
   helper i (x : rest)
@@ -15,6 +16,7 @@ returner1 n list = helper 1 list where
 -- >>> returner2 3 [1,9,3,4,1,6,7,18,4,11]
 -- [3,6,4]
 returner2 :: Int -> [a] -> [a]
+returner2 n _ | n <= 0 = []
 returner2 n list =
   let zipped = zip [1 ..] list
       filtered = filter (\(i,elm) -> i `mod` n == 0) zipped
@@ -26,6 +28,7 @@ returner2 n list =
 -- >>> returner3 3 [1,9,3,4,1,6,7,18,4,11]
 -- [3,6,4]
 returner3 :: Int -> [a] -> [a]
+returner3 n _ | n <= 0 = []
 returner3 n list =
   let zipped = zip [1 ..] list
       f (i,elm)
@@ -39,7 +42,7 @@ returner3 n list =
 -- >>> returner4 3 [1,9,3,4,1,6,7,18,4,11]
 -- [3,6,4]
 returner4 :: Int -> [a] -> [a]
-returner4 0 list = []
+returner4 n _ | n <= 0 = []
 returner4 n list =
   let zipped = zip (cycle [1 .. n]) list
       f (i,elm)
@@ -53,7 +56,7 @@ returner4 n list =
 -- >>> returner5 3 [1,9,3,4,1,6,7,18,4,11]
 -- [3,6,4]
 returner5 :: Int -> [a] -> [a]
-returner5 0 list = []
+returner5 n _ | n <= 0 = []
 returner5 n list =
   let dropping = drop (n-1) list
   in case dropping of
@@ -65,7 +68,7 @@ returner5 n list =
 -- >>> returner6 3 [1,9,3,4,1,6,7,18,4,11]
 -- [3,6,4]
 returner6 :: Int -> [a] -> [a]
-returner6 0 list = []
+returner6 n _ | n <= 0 = []
 returner6 n list = [ x | (i,x) <- zip [1 ..] list
                        , i `mod` n == 0]
 
@@ -74,6 +77,7 @@ returner6 n list = [ x | (i,x) <- zip [1 ..] list
 -- >>> returner7 3 [1,9,3,4,1,6,7,18,4,11]
 -- [3,6,4]
 returner7 :: Int -> [a] -> [a]
+returner7 n _ | n <= 0 = []
 returner7 n list =
   let verkuppeln = zip [1 ..] list
   in [ elm | (index,elm) <- verkuppeln, index `mod` n == 0 ]
